@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('internautes', function (Blueprint $table) {
             $table->id();
+            $table->string('nom');
+            $table->string('prenom');
+            $table->string('email');
+            $table->string('type_activite');
+            $table->string('departement');
+            $table->date('date_activite');
+            $table->string('titre_du_retour');
+            $table->string('retour');
+            $table->text('suggestion')->nullable(); // Cette colonne peut ne rien  contenir
             $table->timestamps();
         });
     }
