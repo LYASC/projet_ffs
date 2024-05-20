@@ -1,8 +1,13 @@
 
 <title>Retour d'experience</title>
+    @if (session()->has('soumis'))
+        <div class="alert alert-success">{{session()->get('soumis')}}</div>
+        
+    @endif
     <div class="Formulaire">
         <h2>Formulaire</h2>
-        <form>
+        <form action="/soumission_formulaire" method="POST">
+            @csrf 
             <div class="form-group">
                 <label for="nom">Nom</label>
                 <input type="text" id="nom" name="nom" required>
@@ -16,17 +21,34 @@
                 <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
+                <label for="type_activite">Type d'activité</label>
+                    <select id="type_activite" name="type_activite" required>
+                        <option value=""></option>
+                        <option value="activite1">Activite 1</option>
+                        <option value="activite2">Activite 2</option>
+                        <option value="activite3">activite 3</option>
+                    </select>
+                </div>
+            <div class="form-group">
                 <label for="date_activite">Date de l'activité</label>
                 <input type="date" id="date_activite" name="date_activite" required>
+            </div>
+            <div class="form-group">
+                <label for="titre_du_retour">Titre de votre retour</label>
+                <input type="text" id="titre_du_retour" name="titre_du_retour" required>
+            </div>
+            <div class="form-group">
+                <label for="retour">Votre retour</label>
+                <textarea id="retour" name="retour" rows="4" required></textarea>
             </div>
     
             <div class="form-group">
             <label for="departement">Département</label>
                 <select id="departement" name="departement" required>
                     <option value=""></option>
-                    <option value="Ain">Ain</option>
-                    <option value="	Aisne">	Aisne</option>
-                    <option value="Alpes de Haute-Provence">Alpes de Haute-Provence</option>
+                    <option value="ain">Ain</option>
+                    <option value="aisne">	Aisne</option>
+                    <option value="ahp">Alpes de Haute-Provence</option>
                 </select>
             </div>
     

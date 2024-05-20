@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('titre_du_retour');
             $table->string('retour');
             $table->text('suggestion')->nullable(); // Cette colonne peut ne rien  contenir
+            $table->string('niveau_pratique');
             $table->timestamps();
         });
     }
