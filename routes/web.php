@@ -26,3 +26,22 @@ Route::get('/page_connexion', function () {
     return view('auth/connexion');
 });
 Route::post('/page_connexion', [ConnexionController::class, 'connexion']);
+//Route::post('/page_deconnexion', [ConnexionController::class, 'logout']);
+//Route::get('/page_c', [ConnexionController::class, 'admin']);
+
+/* Route::get('/tableau_de_bord', function () {
+    return view('/');
+}); */
+
+Route::post('/logout', [ConnexionController::class, 'logout']);
+
+
+Route::get('/tableau_de_bord', function () {
+    return view('tableau_de_bord');
+});
+
+
+/* 
+Route::get('/page_deconnexion', function () {
+    return view('auth/deconnexion');
+}); */
