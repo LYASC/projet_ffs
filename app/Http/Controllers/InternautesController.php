@@ -8,10 +8,6 @@ use Illuminate\Http\Request;
 
 class InternautesController extends Controller
 {
-    public function valider()
-    {
-        //echo 'Votre retour a bien été soumis';
-    }
 
     public function store(RetourRequest $request) 
     {

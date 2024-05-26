@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InternautesController;
 use App\Http\Controllers\ConnexionController;
-
+use App\Http\Controllers\contenuController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -40,7 +40,7 @@ Route::get('/tableau_de_bord', function () {
     return view('tableau_de_bord');
 });
 
-
+Route::get('/tableau_de_bord', [contenuController::class, 'affichage_retours']);
 /* 
 Route::get('/page_deconnexion', function () {
     return view('auth/deconnexion');
