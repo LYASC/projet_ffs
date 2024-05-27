@@ -40,8 +40,13 @@ Route::get('/tableau_de_bord', function () {
     return view('tableau_de_bord');
 });
 
+
+Route::get('/modification_retour/{id}', [InternautesController::class, 'modification_retour']);
 Route::get('/tableau_de_bord', [contenuController::class, 'affichage_retours']);
-/* 
-Route::get('/page_deconnexion', function () {
-    return view('auth/deconnexion');
-}); */
+Route::post('/modification_retour', [InternautesController::class, 'modification_retour']);
+Route::post('/modification', [IntenautesController::class, 'enregistrement_modification']);
+ 
+/* Route::get('/tableau_de_bord', [contenuController::class, 'affichage_retours'])->name('tableau_de_bord');
+
+Route::get('/modification_retour/{id}', [InternautesController::class, 'modification_retour'])->name('modification_retour');
+Route::put('/modification_retour/{id}', [InternautesController::class, 'enregistrement_modification'])->name('modification_retour.update'); */
